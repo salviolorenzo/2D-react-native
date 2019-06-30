@@ -1,5 +1,6 @@
 import React, { useState, PureComponent } from 'react';
 import Matter from 'matter-js';
+import PlatformImage from './assets/platform.png';
 import Tile from './tile';
 import { collisionCategories } from './constants';
 
@@ -7,6 +8,7 @@ export class Renderer extends PureComponent {
   render() {
     return (
       <Tile
+        source={PlatformImage}
         size={this.props.size}
         position={this.props.body.position}
         angle={this.props.body.angle}
