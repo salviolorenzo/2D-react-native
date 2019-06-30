@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { StyleSheet, Image } from 'react-native';
-import { collisionsCategories } from '../common/constants';
+import { collisionsCategories } from '../../utils/constants';
 import resolveAssetSource from 'react-native/Libraries/Image/resolveAssetSource';
 import Matter from 'matter-js';
 import MarioIdling from './mario-idling.gif';
