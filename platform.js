@@ -2,7 +2,7 @@ import React, { useState, PureComponent } from 'react';
 import Matter from 'matter-js';
 import PlatformImage from './assets/platform.png';
 import Tile from './tile';
-import { collisionCategories } from './constants';
+import { collisionsCategories } from './constants';
 
 export class Renderer extends PureComponent {
   render() {
@@ -24,8 +24,8 @@ export default function Platform(world, pos, angle, width, category = 0x0002) {
     angle: angle,
     friction: 1,
     collisionFilter: {
-      category: collisionCategories.Platform,
-      mask: collisionCategories.barrel
+      category: collisionsCategories.Platform,
+      mask: collisionsCategories.barrel
     }
   });
 

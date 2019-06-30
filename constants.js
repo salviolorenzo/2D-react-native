@@ -1,5 +1,5 @@
 module.exports = {
-  collisionCategories: {
+  collisionsCategories: {
     mario: 1,
     barrier: 2,
     platform: 4,
