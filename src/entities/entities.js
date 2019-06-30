@@ -1,8 +1,8 @@
 import React from 'react';
 import { Dimensions } from 'react-native';
 import Matter from 'matter-js';
-import Platform from './platform';
-import Mario from './mario';
+import Platform from '../components/platform/platform';
+import Mario from '../components/mario/mario';
 
 Matter.Common.isElement = () => false;
 
