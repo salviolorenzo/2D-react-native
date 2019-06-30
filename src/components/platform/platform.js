@@ -1,8 +1,8 @@
 import React, { useState, PureComponent } from 'react';
 import Matter from 'matter-js';
-import PlatformImage from './assets/platform.png';
-import Tile from './tile';
-import { collisionsCategories } from './constants';
+import PlatformImage from './platform.png';
+import Tile from '../../tile';
+import { collisionsCategories } from '../common/constants';
 
 export class Renderer extends PureComponent {
   render() {

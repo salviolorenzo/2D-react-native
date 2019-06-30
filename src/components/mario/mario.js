@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import { StyleSheet, Image } from 'react-native';
-import { collisionsCategories } from './constants';
+import { collisionsCategories } from '../common/constants';
 import resolveAssetSource from 'react-native/Libraries/Image/resolveAssetSource';
 import Matter from 'matter-js';
-import MarioIdling from './assets/mario-idling.gif';
+import MarioIdling from './mario-idling.gif';
 
 export class Renderer extends Component {
   render() {
