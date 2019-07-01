@@ -2,7 +2,7 @@ import React, { useState, PureComponent } from 'react';
 import Matter from 'matter-js';
 import PlatformImage from './platform.png';
 import Tile from '../../tile';
-import { collisionsCategories } from '../common/constants';
+import { collisionsCategories } from '../../utils/constants';
 
 export class Renderer extends PureComponent {
   render() {
