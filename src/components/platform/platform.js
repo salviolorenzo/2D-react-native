@@ -1,7 +1,7 @@
-import React, { useState, PureComponent } from 'react';
+import React, { PureComponent } from 'react';
 import Matter from 'matter-js';
 import PlatformImage from './platform.png';
-import Tile from '../../tile';
+import Tile from '../common/tile';
 import { collisionsCategories } from '../../utils/constants';
 
 export class Renderer extends PureComponent {
@@ -17,7 +17,7 @@ export class Renderer extends PureComponent {
   }
 }
 
-export default function Platform(world, pos, angle, width, category = 0x0002) {
+export default (world, pos, angle, width, category = 0x0002) => {
   let height = 20;
   let body = Matter.Bodies.rectangle(pos.x, pos.y, width, height, {
     isStatic: true,
@@ -45,4 +45,4 @@ export default function Platform(world, pos, angle, width, category = 0x0002) {
     size: { width, height },
     renderer: <Renderer />
   };
-}
+};

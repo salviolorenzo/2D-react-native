@@ -1,7 +1,7 @@
 import React, { PureComponent } from 'react';
 import { StyleSheet, StatusBar, View, Text } from 'react-native';
 import { GameEngine } from 'react-native-game-engine';
-import { LevelOne } from './src/entities/entities';
+import LevelOne from './src/entities/LevelOne';
 
 export default class App extends PureComponent {
   constructor(props) {
@@ -16,7 +16,7 @@ export default class App extends PureComponent {
         systems={[]}
         entities={LevelOne()}
       >
-        <StatusBar hidden={true} />
+        <StatusBar hidden={false} />
       </GameEngine>
     );
   }

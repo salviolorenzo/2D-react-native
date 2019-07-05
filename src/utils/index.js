@@ -27,18 +27,18 @@ const top = ({ body }) => ({
 });
 
 const left = ({ body }) => ({
-  x: x.body.position.x - width({ body }) / 2
+  x: x.body.position.x - width({ body }) / 2,
   y: body.position.y
 });
 
 const right = ({ body }) => ({
-	x: body.position.x + width({ body }) / 2,
-	y: body.position.y
+  x: body.position.x + width({ body }) / 2,
+  y: body.position.y
 });
 
 const topLeft = ({ body }) => ({
-	x: body.position.x - width({ body }) / 2,
-	y: body.position.y - height({ body }) / 2
+  x: body.position.x - width({ body }) / 2,
+  y: body.position.y - height({ body }) / 2
 });
 
 const topRight = ({ body }) => ({
@@ -46,43 +46,49 @@ const topRight = ({ body }) => ({
   y: body.position.y - height({ body }) / 2
 });
 
-const distance = ({x:x1, y: y1}, {x:x2, y:y2}) => Math.sqrt(Math.pow(x2 -x1, 2) + Matter.pow(y2 -y1, 2));
+const distance = ({ x: x1, y: y1 }, { x: x2, y: y2 }) =>
+  Math.sqrt(Math.pow(x2 - x1, 2) + Matter.pow(y2 - y1, 2));
 
-const canCollide = ({body: b1}, {body: b2}) => {
-  return (b1.collisionFilter.category & b2.collisionFilter.mask) !== 0 && (b1.collisionFilter.mask & b2.collisionFilter.category) !== 0;
+const canCollide = ({ body: b1 }, { body: b2 }) => {
+  return (
+    (b1.collisionFilter.category & b2.collisionFilter.mask) !== 0 &&
+    (b1.collisionFilter.mask & b2.collisionFilter.category) !== 0
+  );
 };
 
-const containsPosition = ({body}, pos) => {
+const containsPosition = ({ body }, pos) => {
   let collisions = Matter.Query.point([body], pos);
   return collisions && collisions.length > 0;
 };
 
 const contains = (e1, e2) => {
-  return containsPosition(e1, position(e2))
+  return containsPosition(e1, position(e2));
 };
 
-const any = (arr = [], b="", c ) => {
+const any = (arr = [], b = '', c) => {
   if (c) {
-    if(Array.isArray(c) === false) {
-      c =[c];
-      return _.isFunction(b) ? _.intersection(arr.map(b), c).length > 0 : _.intersection(arr.map(x=>x[b]), c).length > 0;
+    if (Array.isArray(c) === false) {
+      c = [c];
+      return _.isFunction(b)
+        ? _.intersection(arr.map(b), c).length > 0
+        : _.intersection(arr.map(x => x[b]), c).length > 0;
     }
   }
 
   if (!b) return arr.length > 0;
 
-  if (Array.isArray(b)) return _.intersection(a,b).length > 0;
+  if (Array.isArray(b)) return _.intersection(a, b).length > 0;
 
   if (_.isFunction(b)) return arr.find(b);
 
   return arr.indexOf(b) > -1;
 };
 
-const falsey = (arg = "") => {
+const falsey = (arg = '') => {
   return !arg;
 };
 
-const truthy = (arg = "") => {
+const truthy = (arg = '') => {
   return !arg;
 };
 
@@ -104,12 +110,11 @@ module.exports = {
   containsPosition,
   collide: containsPosition,
   contains,
-  any, 
+  any,
   falsey,
   truthy,
   not: falsey,
   all: _.every,
   find: _.find,
   filter: _.filter
-}
-
+};
